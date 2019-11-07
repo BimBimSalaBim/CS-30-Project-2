@@ -19,11 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\Documents\cs30\project2\anagram.cpp" />
-    <ClCompile Include="..\..\..\..\Documents\cs30\project2\trade.cpp" />
+    <ClCompile Include="anagram.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="..\..\..\..\Documents\cs30\project2\input.txt" />
     <Text Include="words.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

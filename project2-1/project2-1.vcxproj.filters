@@ -15,17 +15,11 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\Documents\cs30\project2\anagram.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Documents\cs30\project2\trade.cpp">
+    <ClCompile Include="anagram.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="..\..\..\..\Documents\cs30\project2\input.txt">
-      <Filter>Source Files</Filter>
-    </Text>
     <Text Include="words.txt">
       <Filter>Resource Files</Filter>
     </Text>
