@@ -1,9 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <istream>
-#include <cstring>
 #include <string>
-#include <list>
 #include <vector>
 #include <algorithm>
 using namespace std;
@@ -47,34 +45,34 @@ int permute(string word, vector<string>& dict, vector<string>& results) {
 
 void display(vector<string>& results) {
 	//Displays size number of strings from results.The results can be printed in any order.
-	for (int i = 0; i < results.size(); i++) {
+	for (int i = 0; i < results.size(); i++) 
 		cout << "Matching word " << results[i] << endl;
-	}
+
 }
 
 int main()
 {
 	vector<string> results(MAXRESULTS);
 	vector<string> dict(MAXDICTWORDS);
-	ifstream dictfile;         // file containing the list of words
-	int nwords;                // number of words read from dictionary
-	string word;
-
-	dictfile.open("C:\\Users\\faiza\\source\\repos\\Project2\\project2-1\\words.txt");
+	ifstream dictfile;
+	// file containing the list of words
+	int nwords;               
+	// number of words read from dictionary    
+	string word;   
+	dictfile.open("words.txt");
 	if (!dictfile) {
 		cout << "File not found!" << endl;
 		return (1);
-	}
-
+	}    
 	nwords = loadDictionary(dictfile, dict);
-
+	dictfile.close();
 	cout << "Please enter a string for an anagram: ";
-	cin >> word;
-
+	cin >> word;    
 	int numMatches = permute(word, dict, results);
 	if (!numMatches)
 		cout << "No matches found" << endl;
-	else
+	else        
 		display(results);
+	return 0;
 
 }
