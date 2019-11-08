@@ -26,7 +26,13 @@ vector<string> findPotentialBadTraders(vector<string> &s) {
 		
 	}
 	
-	cout << a[1][1] << endl;
+	for (int q = 0; q < a.size(); q++)
+	{
+		for (int k = 0; k < a[q].size(); k++)
+		{
+			cout << a[q][k] << endl;
+		}
+	}
 
 	return s;
 }
