@@ -13,13 +13,22 @@ void ThreeDay(vector<vector<string>> &a, int d) {
 			days.push_back(a[i]);
 		}
 	}
-	//check if the stock was baught within 3 days of a price increase
+	vector<vector<string>> trades;
 	for (int i = 0; i < a.size(); i++) {
-		for (int l = 0; l < days.size(); l++) {
-			int daysBefore = stoi(a[i][0]) - stoi(days[l][0]);
-			int daysAfter = stoi(days[l][0]) - stoi(a[i][0]);
-			if (0 <= daysBefore && daysBefore <= 3|| 0 <= daysAfter && daysAfter <= 3) {
-				cout << a[i][0] << "   ----   " << days[l][0] << " ++++ " << daysAfter <<" ++++ " << daysBefore << endl;
+		if (a[i].size() > 2) {
+			trades.push_back(a[i]);
+		}
+	}
+	//check if the stock was baught within 3 days of a price increase
+	for (int l = 0; l < days.size(); l++) {
+		for (int i = 0; i < trades.size(); i++) {
+			int daysBefore = stoi(trades[i][0]) - stoi(days[l][0]);
+			int daysAfter = stoi(days[l][0]) - stoi(trades[i][0]);
+			if (0 <= daysBefore && daysBefore <= 3 || 0 <= daysAfter && daysAfter <= 3) {
+				cout << trades[i][0] << "   ----   " << trades[i][1] << "   ----   " << days[l][0] << " ++++ " << daysAfter << " ++++ " << daysBefore << endl;
+				if (daysBefore > 0) {
+					//check the prev if it is a sell
+				}
 			}
 		}
 	}
