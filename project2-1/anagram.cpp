@@ -11,10 +11,22 @@ const int MAXDICTWORDS = 30000; // Max words that can be read in
 
 int loadDictionary(istream &dictfile, vector<string>& dict) {
 	//Places each string in dictfile into the vector dict. Returns the number of words loadedinto dict.
-	dict.erase(dict.begin(), dict.end());
+	//dict.erase(dict.begin(), dict.end());
 	string str;
-	while (getline(dictfile, str))
-		dict.push_back(str);
+	int i = 0;
+	while (getline(dictfile, str)) {
+		while (i < dict.size()) {
+			auto it = dict.begin();
+			if ((dict[i]) == "") {
+				dict[i] = str;
+				i++;
+				break;
+			}
+			i++;
+		}
+		
+	}
+		
 
 	return dict.size();
 }
@@ -22,7 +34,8 @@ int loadDictionary(istream &dictfile, vector<string>& dict) {
 int permute(string word, vector<string>& dict, vector<string>& results) {
 	//Places all the permutations of word, which are found in dict into results.Returns the number of matched words found.
 	int s = dict.size();
-	results.erase(results.begin(), results.end());
+	//results.erase(results.begin(), results.end());
+	int k = 0;
 	for (int i = 0; i < dict.size(); i++) {
 		if (word.length() == dict[i].length()) {
 			string dictWord = dict[i];
@@ -35,8 +48,17 @@ int permute(string word, vector<string>& dict, vector<string>& results) {
 					if (results[j] == dict[i])
 						inList = true;
 				}
-				if (!inList)
-					results.push_back(dict[i]);
+				if (!inList) {
+					while (k < results.size()) {
+						auto it = results.begin();
+						if ((results[k]) == "") {
+							results[k] = dict[i];
+							k++;
+							break;
+						}
+						k++;
+					}
+				}
 			}
 		}
 	}
@@ -46,7 +68,8 @@ int permute(string word, vector<string>& dict, vector<string>& results) {
 void display(vector<string>& results) {
 	//Displays size number of strings from results.The results can be printed in any order.
 	for (int i = 0; i < results.size(); i++) 
-		cout << "Matching word " << results[i] << endl;
+		if(results[i] != "")
+			cout << "Matching word " << results[i] << endl;
 
 }
 
