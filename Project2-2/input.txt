@@ -7,7 +7,7 @@
 3|25
 5|Shilpa|SELL|150
 8|Kristi|SELL|60000
-9|Shilpa|BUY|50
+9|Shilpa|BUY|500000
 10|15
 11|5
 14|Will|BUY|10000
