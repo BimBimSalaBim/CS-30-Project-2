@@ -31,11 +31,11 @@ vector<string> ThreeDay( vector<vector<string>> &a) {
 			if (0 <= tradesAfter && tradesAfter <= 3) {
 				if (tradesAfter > 0) {
 
-					//check if the trade made goes over the thrushold
+					//check if the trade made goes over the threshold
 					int sell = stoi(trades[i][3]) * (stoi(days[l - 1][1]) - stoi(days[l][1]));
 					int buy = stoi(trades[i][3]) * (stoi(days[l][1]) - stoi(days[l - 1][1]));
 
-					//check if profit gained or loss prevented is over the thrushold
+					//check if profit gained or loss prevented is over the threshold
 					if ((trades[i][2] == "BUY" && buy >= 500000) || (trades[i][2] == "SELL" && sell >= 500000) ){
 
 						// check if the trade is already in the list
